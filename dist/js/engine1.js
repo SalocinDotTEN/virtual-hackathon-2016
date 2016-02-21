@@ -33,4 +33,13 @@ angular.module('PFDApp', []).controller('PFDController', ['$scope', function($sc
 	    }
 	    return total;
 	}
+
+	// $scope.currency = function(symbol) {
+	// 	var currencies = ['usd','euro','yen','bitcoin','RM'];
+	// 	if (symbol < 4) {
+	// 		$scope.currency = '<i class="fa fa-'+currencies[symbol]+' fa-fw"></i>';
+	// 	} else {
+	// 		$scope.currency = 'RM';
+	// 	}
+	// }
 }]);

@@ -58,7 +58,7 @@
                         </a>
                         <ul class="dropdown-menu dropdown-alerts">
                             <li>
-                                <a href="#">
+                                <a href="#" ng-click="currency = '<i class='fa fa-usd fa-fw'></i>'">
                                     <div>
                                         <i class="fa fa-usd fa-fw"></i> USD
                                     </div>
@@ -66,7 +66,7 @@
                             </li>
                             <li class="divider"></li>
                             <li>
-                                <a href="#">
+                                <a href="#" ng-click="currency = '<i class='fa fa-euro fa-fw'></i>'">
                                     <div>
                                         <i class="fa fa-euro fa-fw"></i> Euro
                                     </div>
@@ -74,7 +74,7 @@
                             </li>
                             <li class="divider"></li>
                             <li>
-                                <a href="#">
+                                <a href="#" ng-click="currency = '<i class='fa fa-yen fa-fw'></i>'">
                                     <div>
                                         <i class="fa fa-yen fa-fw"></i> Yen
                                     </div>
@@ -82,7 +82,7 @@
                             </li>
                             <li class="divider"></li>
                             <li>
-                                <a href="#">
+                                <a href="#" ng-click="currency = '<i class='fa fa-bitcoin fa-fw'></i>'">
                                     <div>
                                         <i class="fa fa-bitcoin fa-fw"></i> Bitcoins
                                     </div>
@@ -90,7 +90,7 @@
                             </li>
                             <li class="divider"></li>
                             <li>
-                                <a href="#">
+                                <a href="#" ng-click="currency = 'RM'">
                                     <div>
                                         <b>RM</b> Malaysian Ringgit
                                     </div>
@@ -225,6 +225,10 @@
                         </ul>
                     </div>
                     <!-- /.sidebar-collapse -->
+                    <br/><br/>
+                    <p>Created for Hack.Summit() Virtual Hackathon 2016 by <a href="http://www.salocinten.net" target="_blank">Salocin.TEN</a>, a PHP Wordpress Web developer who would like to explore more opportunities.</p>
+                    <p>Inspired by the following podcast...</p>
+                    <audio controls preload style="width: 100%;"><source src="http://s3-ap-southeast-1.amazonaws.com/ringgitandsense/2016-01-14-Podcast-RnS%0A.mp3" type="audio/mp3"><p>Your browser does not support native audio, but you can <a href="http://s3-ap-southeast-1.amazonaws.com/ringgitandsense/2016-01-14-Podcast-RnS%0A.mp3">download this MP3</a> to listen on your device.</p></audio>
                 </div>
                 <!-- /.navbar-static-side -->
             </nav>
@@ -246,12 +250,15 @@
                                     <i class="fa fa-bank fa-fw"></i> Monthly income total (type decimal, it will format automatically!)
                                 </div>
                                 <div class="panel-body">
-                                    <input type="number" id="monthlyIncome" class="form-control input-lg" ng-model="monthlyIncome" min="0" />
+                                    <div class="input-group">
+                                        <div class="input-group-addon">{{currency}}</div>
+                                        <input type="number" id="monthlyIncome" class="form-control input-lg" ng-model="monthlyIncome" min="0" />
+                                    </div>
                                 </div>
                             </div>
                             <div class="panel panel-default">
                                 <div class="panel-heading">
-                                    <i class="fa fa-dollar fa-fw"></i> Monthly Expenditures
+                                    <i class="fa fa-shopping-cart fa-fw"></i> Monthly Expenditures
                                 </div>
                                 <div class="panel-body">
                                 <div class="row">
@@ -287,20 +294,30 @@
                             </div>
                         </div>
                         <div class="col-lg-6 col-sm-12">
-                            <div class="panel panel-default">
+                            <div class="panel panel-green">
                                 <div class="panel-heading">
-                                    <i class="fa fa-dollar fa-fw"></i> Financial Status
+                                    <i class="fa fa-tachometer fa-fw"></i> Financial Status
+                                    <h2>YOU'RE DOING GREAT!</h2>
                                 </div>
-                                <div class="panel-body">
-
+                            </div>
+                            <div class="panel panel-yellow">
+                                <div class="panel-heading">
+                                    <i class="fa fa-tachometer fa-fw"></i> Financial Status
+                                    <h2>WARNING: PLEASE CHECK EXPENDITURES!</h2>
+                                </div>
+                            </div>
+                            <div class="panel panel-red">
+                                <div class="panel-heading">
+                                    <i class="fa fa-tachometer fa-fw"></i> Financial Status
+                                    <h2>PLEASE STOP SPENDING FOR NOW!!!</h2>
                                 </div>
                             </div>
                             <div class="panel panel-default">
                                 <div class="panel-heading">
-                                    <i class="fa fa-smile-o fa-fw"></i> Total Savings!
+                                    <i class="glyphicon glyphicon-piggy-bank"></i> Total Savings!
                                 </div>
                                 <div class="panel-body">
-                                    <h2>{{monthlyIncome - totalSpent() | currency:"":2}}</h2>
+                                    <h2>{{currency}} {{monthlyIncome - totalSpent() | currency:"":2}}</h2>
                                 </div>
                             </div>                        
                         </div>
