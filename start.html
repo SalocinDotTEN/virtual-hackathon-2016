@@ -267,7 +267,10 @@
                                         <input type="text" class="form-control" ng-model="expenseItem" placeholder="Enter expense (Bill, Food, Drink, etc)" required="" />
                                     </div>
                                     <div class="col-md-6 col-sm-12">
-                                        <input type="number" class="form-control" ng-model="expenseCash" placeholder="Enter money spent" min="0" />
+                                        <div class="input-group">
+                                            <div class="input-group-addon" ng-bind-html="currency"></div>
+                                            <input type="number" class="form-control" ng-model="expenseCash" placeholder="Enter money spent" min="0" />
+                                        </div>
                                     </div>
                                 </div>
                                 <a id="add_row" class="btn btn-primary pull-left" ng-click="addRow()">Add</a>
