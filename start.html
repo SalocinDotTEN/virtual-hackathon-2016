@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en" ng-app>
+<html lang="en" ng-app="PFDApp">
 
 <head>
 
@@ -34,7 +34,7 @@
 
     </head>
 
-    <body>
+    <body ng-controller="PFDController">
 
         <div id="wrapper">
 
@@ -319,27 +319,27 @@
                                 <div class="panel-body">
                                     <table class="table table-bordered table-hover" id="tab_logic">
                                         <thead>
-                                            <tr >
+                                            <tr>
                                                 <th class="text-center">#</th>
                                                 <th class="text-center">Expense</th>
                                                 <th class="text-center">Price</th>
                                             </tr>
                                         </thead>
                                         <tbody>
-                                            <tr id='addr0'>
-                                                <td>1</td>
+                                            <tr ng-repeat="expenseRow in expenses track by $index">
+                                                <td>{{$index+1}}</td>
                                                 <td>
-                                                    <input type="text" id='expense0' name='expense0' placeholder='Enter expense (Bill, Food, Drink, etc)' class="form-control"/>
+                                                    <input type="text" id="expense{{$index+1}}" name="expense{{$index+1}}" ng-model="expenseRow.item" placeholder="Enter expense (Bill, Food, Drink, etc)" class="form-control"/>
                                                 </td>
                                                 <td>
-                                                    <input type="text" id='cashSpent0' name='cashSpent0' placeholder='Enter money spent' class="form-control"/>
+                                                    <input type="text" id="cashSpent{{$index+1}}" name="cashSpent{{$index+1}}" ng-model="expenseRow.cashSpent" placeholder="Enter money spent" class="cashSpent form-control"/>
                                                 </td>
                                             </tr>
-                                            <tr id='addr1'></tr>
+                                            <!-- <tr id='addr1'></tr> -->
                                         </tbody>
                                     </table>
-                                    <a id="add_row" class="btn btn-primary pull-left">Add Row</a>
-                                    <a id='delete_row' class="pull-right btn btn-danger">Delete Row</a>
+                                    <a id="add_row" class="btn btn-primary pull-left" ng-click="addRow()">Add Row</a>
+                                    <a id='delete_row' class="pull-right btn btn-danger" ng-click="delRow()">Delete Row</a>
                                     <input type="number" id="monthlyExpend" class="form-control input-lg" ng-model="monthlyExpend" min="0" />                                
                                 </div>
                             </div>
@@ -387,6 +387,8 @@
         <!-- DataTables JavaScript -->
         <script src="bower_components/datatables/media/js/jquery.dataTables.min.js"></script>
         <script src="bower_components/datatables-plugins/integration/bootstrap/3/dataTables.bootstrap.min.js"></script>
+
+        <script type="text/javascript" src="dist/js/engine1.js"></script>
 
         <!-- Custom Theme JavaScript -->
         <script src="dist/js/sb-admin-2.js"></script>

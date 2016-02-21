@@ -1,8 +1,20 @@
-var pfdApp = angular.module('pfdApp', []);
+angular.module('PFDApp', []).controller('PFDController', ['$scope', function($scope){
+	var expenses = $scope.expenses = [{item: '', cashSpent: ''}];
 
-pfdApp.controller('pfdController', ['$scope', function($scope){
-	$scope.calculator = {
-		monthlyIncome : '',
-		monthlyExpend : ''
-	};
+	$scope.item = '';
+
+	$scope.cashSpent = 0;
+
+	$scope.addRow = function() {
+		expenses.push({item, cashSpent});
+		// $scope.counter++;
+	}
+
+	$scope.delRow = function() {
+		expenses.splice(index, 1);
+		// if ($scope.counter > 1) {
+		// 	$scope.expenses.pop($scope.counter);
+		// 	$scope.counter--;			
+		// }
+	}
 }]);

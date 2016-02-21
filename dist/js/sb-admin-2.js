@@ -1,8 +1,16 @@
 $(function() {
-
     $('#side-menu').metisMenu();
-
 });
+
+function totalExpense() {
+    var total = 0;
+    $(".cashSpent").each(function() {
+        if (!isNaN(this.value) && (this.value.length != 0)) {
+            total += parseFloat(this.value);
+        }
+    });
+    $("#monthlyExpend").val(total.toFixed(2));
+}
 
 //Loads the correct sidebar on window load,
 //collapses the sidebar on window resize.
@@ -29,19 +37,20 @@ $(function() {
         //     prefix: ''
         // });
 
-        var i=1;
-        $("#add_row").click(function(){
-            $('#addr'+i).html("<td>"+ (i+1) +"</td><td><input id='expense"+i+"' name='expense"+i+"' type='text' placeholder='Enter expense (Bill, Food, Drink, etc)' class='form-control input-md'  /> </td><td><input id='cashSpent"+i+"' name='cashSpent"+i+"' type='text' placeholder='Enter money spent'  class='form-control input-md'></td>");
-
-          $('#tab_logic').append('<tr id="addr'+(i+1)+'"></tr>');
-          i++; 
-      });
-        $("#delete_row").click(function(){
-           if(i>1){
-               $("#addr"+(i-1)).html('');
-               i--;
-           }
-       });
+        // var i=1;
+        // $("#add_row").click(function() {
+        //     $('#addr'+i).html("<td>"+ (i+1) +"</td><td><input id='expense"+i+"' name='expense"+i+"' type='text' placeholder='Enter expense (Bill, Food, Drink, etc)' class='form-control input-md'  /> </td><td><input id='cashSpent"+i+"' name='cashSpent"+i+"' type='text' placeholder='Enter money spent'  class='cashSpent form-control input-md'></td>");
+        //     $('#tab_logic').append('<tr id="addr'+(i+1)+'"></tr>');
+        //     i++;
+        //     totalExpense();
+        // });
+        // $("#delete_row").click(function() {
+        //     if(i>1) {
+        //      $("#addr"+(i-1)).html('');
+        //      i--;
+        //      // $("#monthlyExpend").val($("#monthlyExpend").val() - $('#cashSpent'+i).val());
+        //     }
+        // });
 
     });
 
