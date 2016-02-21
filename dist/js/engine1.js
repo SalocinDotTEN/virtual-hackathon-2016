@@ -1,4 +1,4 @@
-angular.module('PFDApp', []).controller('PFDController', ['$scope', function($scope){
+angular.module('PFDApp', ['ngSanitize']).controller('PFDController', ['$scope', function($scope){
 	$scope.expenses = [];
 
 	$scope.addRow = function() {
@@ -34,12 +34,14 @@ angular.module('PFDApp', []).controller('PFDController', ['$scope', function($sc
 	    return total;
 	}
 
-	// $scope.currency = function(symbol) {
-	// 	var currencies = ['usd','euro','yen','bitcoin','RM'];
-	// 	if (symbol < 4) {
-	// 		$scope.currency = '<i class="fa fa-'+currencies[symbol]+' fa-fw"></i>';
-	// 	} else {
-	// 		$scope.currency = 'RM';
-	// 	}
-	// }
+	$scope.currency = '<i class="fa fa-usd fa-fw"></i>';
+
+	$scope.chgCurrency = function(symbol) {
+		var currencies = ["usd","euro","yen","btc","RM"];
+		if (symbol < 4) {
+			$scope.currency = '<i class="fa fa-'+currencies[symbol]+' fa-fw"></i>';
+		} else {
+			$scope.currency = 'RM';
+		}
+	}
 }]);

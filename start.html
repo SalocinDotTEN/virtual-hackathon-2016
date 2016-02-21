@@ -24,6 +24,7 @@
     <link href="bower_components/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
 
     <script type="text/javascript" src="dist/js/angular.min.js"></script>
+    <script type="text/javascript" src="dist/js/angular-sanitize.min.js"></script>
 
     <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
@@ -58,7 +59,7 @@
                         </a>
                         <ul class="dropdown-menu dropdown-alerts">
                             <li>
-                                <a href="#" ng-click="currency = '<i class='fa fa-usd fa-fw'></i>'">
+                                <a href="#" ng-click="chgCurrency(0)">
                                     <div>
                                         <i class="fa fa-usd fa-fw"></i> USD
                                     </div>
@@ -66,7 +67,7 @@
                             </li>
                             <li class="divider"></li>
                             <li>
-                                <a href="#" ng-click="currency = '<i class='fa fa-euro fa-fw'></i>'">
+                                <a href="#" ng-click="chgCurrency(1)">
                                     <div>
                                         <i class="fa fa-euro fa-fw"></i> Euro
                                     </div>
@@ -74,7 +75,7 @@
                             </li>
                             <li class="divider"></li>
                             <li>
-                                <a href="#" ng-click="currency = '<i class='fa fa-yen fa-fw'></i>'">
+                                <a href="#" ng-click="chgCurrency(2)">
                                     <div>
                                         <i class="fa fa-yen fa-fw"></i> Yen
                                     </div>
@@ -82,7 +83,7 @@
                             </li>
                             <li class="divider"></li>
                             <li>
-                                <a href="#" ng-click="currency = '<i class='fa fa-bitcoin fa-fw'></i>'">
+                                <a href="#" ng-click="chgCurrency(3)">
                                     <div>
                                         <i class="fa fa-bitcoin fa-fw"></i> Bitcoins
                                     </div>
@@ -90,7 +91,7 @@
                             </li>
                             <li class="divider"></li>
                             <li>
-                                <a href="#" ng-click="currency = 'RM'">
+                                <a href="#" ng-click="chgCurrency(4)">
                                     <div>
                                         <b>RM</b> Malaysian Ringgit
                                     </div>
@@ -251,7 +252,7 @@
                                 </div>
                                 <div class="panel-body">
                                     <div class="input-group">
-                                        <div class="input-group-addon">{{currency}}</div>
+                                        <div class="input-group-addon" ng-bind-html="currency"></div>
                                         <input type="number" id="monthlyIncome" class="form-control input-lg" ng-model="monthlyIncome" min="0" />
                                     </div>
                                 </div>
@@ -284,7 +285,7 @@
                                             <tr ng-repeat="expenseRow in expenses track by $index">
                                                 <td>{{$index+1}}</td>
                                                 <td>{{expenseRow.item}}</td>
-                                                <td>{{expenseRow.cashSpent | currency:"":2}}</td>
+                                                <td><span ng-bind-html="currency"></span> {{expenseRow.cashSpent | currency:"":2}}</td>
                                                 <td><a class="pull-right btn btn-danger" ng-click="delRow($index)">Delete</a></td>
                                             </tr>
                                         </tbody>
@@ -317,7 +318,7 @@
                                     <i class="glyphicon glyphicon-piggy-bank"></i> Total Savings!
                                 </div>
                                 <div class="panel-body">
-                                    <h2>{{currency}} {{monthlyIncome - totalSpent() | currency:"":2}}</h2>
+                                    <h2><span ng-bind-html="currency"></span> {{monthlyIncome - totalSpent() | currency:"":2}}</h2>
                                 </div>
                             </div>                        
                         </div>
