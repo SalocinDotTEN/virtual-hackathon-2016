@@ -317,29 +317,34 @@
                                     <i class="fa fa-dollar fa-fw"></i> Monthly Expenditures
                                 </div>
                                 <div class="panel-body">
+                                <div class="row">
+                                    <div class="col-md-6 col-sm-12">
+                                        <input type="text" class="form-control" ng-model="expenseItem" placeholder="Enter expense (Bill, Food, Drink, etc)" required="" />
+                                    </div>
+                                    <div class="col-md-6 col-sm-12">
+                                        <input type="number" class="form-control" ng-model="expenseCash" placeholder="Enter money spent" min="0" />
+                                    </div>
+                                </div>
+                                <a id="add_row" class="btn btn-primary pull-left" ng-click="addRow()">Add</a>
+                                <br/><br/>
                                     <table class="table table-bordered table-hover" id="tab_logic">
                                         <thead>
                                             <tr>
                                                 <th class="text-center">#</th>
                                                 <th class="text-center">Expense</th>
                                                 <th class="text-center">Price</th>
+                                                <th></th>
                                             </tr>
                                         </thead>
                                         <tbody>
                                             <tr ng-repeat="expenseRow in expenses track by $index">
                                                 <td>{{$index+1}}</td>
-                                                <td>
-                                                    <input type="text" id="expense{{$index+1}}" name="expense{{$index+1}}" ng-model="expenseRow.item" placeholder="Enter expense (Bill, Food, Drink, etc)" class="form-control"/>
-                                                </td>
-                                                <td>
-                                                    <input type="text" id="cashSpent{{$index+1}}" name="cashSpent{{$index+1}}" ng-model="expenseRow.cashSpent" placeholder="Enter money spent" class="cashSpent form-control"/>
-                                                </td>
+                                                <td>{{expenseRow.item}}</td>
+                                                <td>{{expenseRow.cashSpent}}</td>
+                                                <td><a class="pull-right btn btn-danger" ng-click="delRow($index)">Delete</a></td>
                                             </tr>
-                                            <!-- <tr id='addr1'></tr> -->
                                         </tbody>
                                     </table>
-                                    <a id="add_row" class="btn btn-primary pull-left" ng-click="addRow()">Add Row</a>
-                                    <a id='delete_row' class="pull-right btn btn-danger" ng-click="delRow()">Delete Row</a>
                                     <input type="number" id="monthlyExpend" class="form-control input-lg" ng-model="monthlyExpend" min="0" />                                
                                 </div>
                             </div>
