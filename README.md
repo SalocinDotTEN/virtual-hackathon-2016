@@ -1,27 +1,37 @@
-# [Start Bootstrap](http://startbootstrap.com/) - [SB Admin 2](http://startbootstrap.com/template-overviews/sb-admin-2/)
+# This is my entry for the 2016 hack.summit [Koding.com](http://koding.com) virtual hackathon.
 
-[SB Admin 2](http://startbootstrap.com/template-overviews/sb-admin-2/) is an open source, admin dashboard template for [Bootstrap](http://getbootstrap.com/) created by [Start Bootstrap](http://startbootstrap.com/).
+Created this as an idea that other financial dashboards so-called are like using sledgehammers to hit a fly, and also inspired by [this podcast](http://www.bfm.my/rns-rajen-devadasen-using-financial-dashboards.html). This aims to be a very very dead simple way to track one's expenses for that month.
 
-## Getting Started
 
-To use this template, choose one of the following options to get started:
-* Download the latest release on Start Bootstrap
-* Fork this repository on GitHub
-* Install via bower using `bower install startbootstrap-sb-admin-2`
+## Usage
+
+* Please browse to the hackathon URL that was given in the submission form.
+* Wait about 2 to 3 seconds to simulate an automatic login.
+* Choose a currency at the top right Currency menu.
+* Key in the income for the month.
+* Add expenditures for the month.
+* See the calculation.
+* Use the print button beside the dashboard heading to print it out.
+
+
+## Future enhancements (for future hackathons)
+
+Databases and a use of a proper secure framework for historical tracking.
+More dashboards to track more financial stuff.
+
 
 ## Bugs and Issues
 
-Have a bug or an issue with this template? [Open a new issue](https://github.com/IronSummitMedia/startbootstrap-sb-admin-2/issues) here on GitHub or leave a comment on the [template overview page at Start Bootstrap](http://startbootstrap.com/template-overviews/sb-admin-2/).
+Please leave issues into the issue feature on this Github. Click Issues tab.
+
 
 ## Creator
 
-Start Bootstrap was created by and is maintained by **David Miller**, Managing Parter at [Iron Summit Media Strategies](http://www.ironsummitmedia.com/).
+[Salocin.TEN](http://salocinten.net) is a Wordpress and PHP Web developer at [Tricor Senedi](http://tricorsenedi.com). He is looking into the power of AngularJS as a prelude to the Ionic Framework.
 
-* https://twitter.com/davidmillerskt
-* https://github.com/davidtmiller
-
-Start Bootstrap is based on the [Bootstrap](http://getbootstrap.com/) framework created by [Mark Otto](https://twitter.com/mdo) and [Jacob Thorton](https://twitter.com/fat).
 
 ## Copyright and License
 
-Copyright 2013-2015 Iron Summit Media Strategies, LLC. Code released under the [Apache 2.0](https://github.com/IronSummitMedia/startbootstrap-sb-admin-2/blob/gh-pages/LICENSE) license.
+Released under the Apache 2.0 license.
+
+Base theme framework by [Start Bootstrap](http://startbootstrap.com/), an open source, admin dashboard template for [Bootstrap](http://getbootstrap.com/).
