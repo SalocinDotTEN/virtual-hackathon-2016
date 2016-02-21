@@ -24,6 +24,25 @@ $(function() {
         if (height > topOffset) {
             $("#page-wrapper").css("min-height", (height) + "px");
         }
+
+        // $("#monthlyIncome, #monthlyExpend").priceFormat({
+        //     prefix: ''
+        // });
+
+        var i=1;
+        $("#add_row").click(function(){
+            $('#addr'+i).html("<td>"+ (i+1) +"</td><td><input id='expense"+i+"' name='expense"+i+"' type='text' placeholder='Enter expense (Bill, Food, Drink, etc)' class='form-control input-md'  /> </td><td><input id='cashSpent"+i+"' name='cashSpent"+i+"' type='text' placeholder='Enter money spent'  class='form-control input-md'></td>");
+
+          $('#tab_logic').append('<tr id="addr'+(i+1)+'"></tr>');
+          i++; 
+      });
+        $("#delete_row").click(function(){
+           if(i>1){
+               $("#addr"+(i-1)).html('');
+               i--;
+           }
+       });
+
     });
 
     var url = window.location;
