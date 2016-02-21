@@ -294,13 +294,13 @@
                             </div>
                         </div>
                         <div class="col-lg-6 col-sm-12">
-                            <div class="panel panel-green" ng-if="((monthlyIncome - totalSpent())/monthlyIncome)*0.02 = 0">
+                            <div class="panel panel-green" ng-if="((monthlyIncome - totalSpent())/monthlyIncome)*100 > 20">
                                 <div class="panel-heading">
                                     <i class="fa fa-tachometer fa-fw"></i> Financial Status
                                     <h2>YOU'RE DOING GREAT!</h2>
                                 </div>
                             </div>
-                            <div class="panel panel-yellow" ng-if="(monthlyIncome - totalSpent()) > 0">
+                            <div class="panel panel-yellow" ng-if="((monthlyIncome - totalSpent())/monthlyIncome)*100 <= 20">
                                 <div class="panel-heading">
                                     <i class="fa fa-tachometer fa-fw"></i> Financial Status
                                     <h2>WARNING: PLEASE CHECK EXPENDITURES! LESS THAN 20% FOR SAVINGS!</h2>
