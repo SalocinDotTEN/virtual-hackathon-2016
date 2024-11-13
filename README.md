@@ -1,6 +1,6 @@
 # This is my entry for the 2016 hack.summit [Koding.com](http://koding.com) virtual hackathon.
 
-Created this as an idea that other financial dashboards so-called are like using sledgehammers to hit a fly, and also inspired by [this podcast](http://www.bfm.my/rns-rajen-devadasen-using-financial-dashboards.html). This aims to be a very very dead simple way to track one's expenses for that month.
+Created this as an idea that other financial dashboards so-called are like using sledgehammers to hit a fly, and also inspired by [this podcast](https://www.bfm.my/rns-rajen-devadasen-using-financial-dashboards.html). This aims to be a very very dead simple way to track one's expenses for that month.
 
 
 ## Usage
@@ -27,7 +27,7 @@ Please leave issues into the issue feature on this Github. Click Issues tab.
 
 ## Creator
 
-[Salocin.TEN](http://salocinten.net) is a Wordpress and PHP Web developer at [Tricor Senedi](http://tricorsenedi.com). He is looking into the power of AngularJS as a prelude to the Ionic Framework.
+[Salocin.TEN](https://www.salocinten.info) is a Wordpress and PHP Web developer. He is looking into the power of VueJS.
 
 
 ## Copyright and License
